@@ -1,0 +1,44 @@
+# Docker图形化工具Portainer
+
+## 下载Portainer的Docker镜像
+docker pull portainer/portainer
+
+## 汉化教程（https://www.quchao.net/Portainer-CN.html）
+
+## 运行Portainer容器
+docker run -p 9000:9000 -p 8000:8000 --name portainer \
+--restart=always \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v /mydata/portainer/data:/data \
+-d portainer/portainer
+
+访问地址： http://192.168.1.235:9000/#/init/admin
+创建密码
+admin w123.456
+选择Local的docker
+登录成功后，可以发现有一个本地的Docker环境；
+
+打开Dashboard菜单可以看到Docker环境的概览信息，比如运行了几个容器，有多少个镜像等；
+打开App Templates菜单可以看到很多创建容器的模板，通过模板设置下即可轻松创建容器，支持的应用还是挺多的；
+打开Containers菜单，可以看到当前创建的容器，我们可以对容器进行运行、暂停、删除等操作；
+选择一个容器，点击Logs按钮，可以直接查看容器运行日志，可以和docker logs命令说再见了；
+点击Inspect按钮，可以查看容器信息，比如看看容器运行的IP地址；
+点击Stats按钮，可以查看容器的内存、CPU及网络的使用情况，性能分析不愁了；
+点击Console按钮，可以进入到容器中去执行命令，比如我们可以进入到MySQL容器中去执行登录命令；
+打开Images菜单，我们可以查看所有的本地镜像，对镜像进行管理；
+打开Networks菜单，可以查看Docker环境中的网络情况；
+打开Users菜单，我们可以创建Portainer的用户，并给他们赋予相应的角色；
+打开Registries菜单，我们可以配置自己的镜像仓库，这样在拉取镜像的时候，就可以选择从自己的镜像仓库拉取了。
+（吊炸天的 Docker 图形化工具 Portainer，必须推荐给你！
+）https://mp.weixin.qq.com/s?__biz=MzU1Nzg4NjgyMw==&mid=2247490489&idx=1&sn=8890847f325035439158dc3df107e8fb&chksm=fc2fa7b1cb582ea735876ec4704140f8ea5a0db31b12f35480968a4b04fb2b04f33b73cae9b6&mpshare=1&scene=24&srcid=04209oDLUsvHAKsWQL0YmH6t&sharer_sharetime=1618881608488&sharer_shareid=73a8d7a1a7aa8ba661d8ccbe69b6e9d1#rd
+
+
+
+
+
+
+
+
+
+
+
